@@ -1,0 +1,39 @@
+Games::Poker::HistoryParser Version 1.3
+
+Parsing online poker hand histories has interested me for a long time.  My initial 
+attempts, begun about three years ago, generally ended when I would get sidetracked 
+by real life or other projects.  Recently I started a side project to build a system 
+allowing a player to create a poker situation diagram by filling out a web-based form.  
+The diagrams themselves resemble those found in "Harrington On Hold'em" by Dan 
+Harrington's.  However, it occurred to me that it would be nice to be able to just 
+paste a hand history into the form and get the diagram back.
+
+Not being all that interested in starting another hand history parsing project, I 
+looked at the hand converter written by bisonbison that is in common use by posters 
+to internet message boards.  After attempting to understand Bison's hhconverter.cgi 
+script, I decided it would probably be easier for me to just refactor the code and 
+gain understanding that way.
+
+This project is the outcome of that refactoring.  None of Bison's original code 
+remains.  
+
+Bison's Hand Converter can be found at 
+
+  http://sourceforge.net/projects/handconverter
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2005 Troy Denkinger
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
