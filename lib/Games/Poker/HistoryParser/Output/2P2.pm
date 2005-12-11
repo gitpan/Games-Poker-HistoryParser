@@ -141,6 +141,8 @@ sub get_output{
     
     $output .= $results . "\n";
     
+    $output = "Compliments of [url=http://pokergeek.com/cgi-bin/handconverter/convert.cgi]PokerGeek[/url]\n" . $output;
+    
     return $output;
 }
 

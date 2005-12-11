@@ -46,7 +46,7 @@ sub _determine_game{
     my ( $history ) = @_;
   
     return 'HE', 'Hold\'em', 0              if ( $history =~ m/Hold'em - /) || ($history =~ m/Hold'em[^\n]*Trny:\d+/ );
-    return 'OH', 'Omaha High', 0            if ( $history =~ m/Omaha Hi - /i);
+    return 'OH', 'Omaha High', 0            if ( $history =~ m/Omaha\s-\s/i);
     return 'OH', 'Omaha/8', 1               if ( $history =~ m/Omaha Hi\/Lo/i);
     return '7S', 'Seven Card Stud High', 0  if ( $history =~ m/7 Card Stud - /i);
     return '7S', 'Seven Card Stud Hi/Lo', 1 if ( $history =~ m/7 Stud Hi\/Lo/i) ;

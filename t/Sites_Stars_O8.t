@@ -110,6 +110,7 @@ Seat 9: Player_9 folded before Flop (didn't bet)
 Seat 10: Player_10 folded before Flop (didn't bet)
 END_RAW
 START_2P2
+Compliments of [url=http://pokergeek.com/cgi-bin/handconverter/convert.cgi]PokerGeek[/url]
 PokerStars Limit Omaha/8 Ring - $5/$10 Stakes  (10 handed)
 
 Starting Stacks
@@ -127,13 +128,13 @@ Seat 10: UTG+1 ($155)
 [b]Preflop:[/b] Hero is Small blind with A:diamond:, 3:heart:, Q:club:, K:heart:.
 [color:#666666][i]6 folds[/i][/color], CO calls, [color:#666666][i]1 fold[/i][/color], Hero calls, Big blind checks
 
-[b]Flop:[/b] (3.00 SB) 6:spade:, 7:diamond:, 9:club: [color:#0000FF](3 players)[/color]
+[b]Flop:[/b] (2.60 SB) 6:spade:, 7:diamond:, 9:club: [color:#0000FF](3 players)[/color]
 Hero checks, Big blind checks, CO checks
 
-[b]Turn:[/b] (1.50 BB) T:heart: [color:#0000FF](3 players)[/color]
+[b]Turn:[/b] (1.30 BB) T:heart: [color:#0000FF](3 players)[/color]
 Hero checks, Big blind bets, CO folds, Hero calls
 
-[b]River:[/b] (3.50 BB) 5:heart: [color:#0000FF](2 players)[/color]
+[b]River:[/b] (3.30 BB) 5:heart: [color:#0000FF](2 players)[/color]
 Hero checks, Big blind checks
 
 [b]Final Pot:[/b] $34 ($1 rake)

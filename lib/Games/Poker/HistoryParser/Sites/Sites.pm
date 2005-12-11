@@ -7,7 +7,7 @@ use Exporter;
 use Data::Dumper;
 
 our @ISA = qw(Exporter);
-our $VERSION = '1.3';
+our $VERSION = '1.4';
 our $error = "";
 our @EXPORT;
 
@@ -21,7 +21,9 @@ sub process_hand{
     my %regex = ( 
                     'PokerStars'  => 'PokerStars Game',
                     'PartyPoker'  => '\*{5} Hand History for Game \d+ \*{5}',
-                    'UltimateBet' => 'Powered by UltimateBet'
+                    'UltimateBet' => 'Powered by UltimateBet',
+                    'FullTilt'    => 'FullTiltPoker\sGame',
+                    'Absolute'    => 'Stage\s#\d+:\s',
                 );
 
     if( $history =~ m/$regex{'PartyPoker'}/i){  
@@ -44,6 +46,16 @@ sub process_hand{
         require Games::Poker::HistoryParser::Sites::Prima::Process;
         return Games::Poker::HistoryParser::Sites::Prima::Process::process( $history );
         
+    }elsif( $history =~ m/$regex{'FullTilt'}/i ){
+
+        require Games::Poker::HistoryParser::Sites::FullTilt::Process;
+        return Games::Poker::HistoryParser::Sites::FullTilt::Process::process( $history );
+
+    }elsif( $history =~ m/$regex{'Absolute'}/i ){
+
+        require Games::Poker::HistoryParser::Sites::Absolute::Process;
+        return Games::Poker::HistoryParser::Sites::Absolute::Process::process( $history );
+    
     }else{  
         
         return undef;

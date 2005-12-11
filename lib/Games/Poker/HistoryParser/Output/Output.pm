@@ -42,8 +42,8 @@ sub show{
     
     }elsif( lc $output_target eq 'diagrammer' ){
 
-#        require Games::Poker::HistoryParser::Output::Diagrammer;
-#        $output = Games::Poker::HistoryParser::Output::Diagrammer::get_output( $data, $result, $showstacks );
+        require Games::Poker::HistoryParser::Output::Diagrammer;
+        $output = Games::Poker::HistoryParser::Output::Diagrammer::get_output( $data, $result, $showstacks );
     
     }elsif( lc $output_target eq 'xml' ){
 

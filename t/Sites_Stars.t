@@ -33,6 +33,11 @@ my $control_2p2  = $2; $control_2p2  = strip( $control_2p2 );
 #my $control_xml  = $5; $control_xml  = strip( $control_xml );
 #my $control_html = $6; $control_html = strip( $control_html );
 
+#print show( process_hand( $raw, 0 ), '2P2',  'show', 1 );
+#print "\n---\n";
+#print $control_2p2;
+#print "\n";
+
 #ok( show( process_hand( $raw, ) )                      eq $control_dump, 'Output format - Dump' );
 ok( show( process_hand( $raw, 0 ), '2P2',  'show', 1 ) eq $control_2p2,  'Output format - 2P2' );
 #ok( show( process_hand( $raw, 0 ), 'text', 'show', 1 ) eq $control_text, 'Output format - Text' );
@@ -108,6 +113,7 @@ Seat 9: Player_9 (button) showed [Qc Qd] and won ($7) with a pair of Queens
 Seat 10: Player_10 (small blind) folded before Flop
 END_RAW
 START_2P2
+Compliments of [url=http://pokergeek.com/cgi-bin/handconverter/convert.cgi]PokerGeek[/url]
 PokerStars Limit Hold'em Ring - $0.50/$1.00 Stakes  (10 handed)
 
 Starting Stacks

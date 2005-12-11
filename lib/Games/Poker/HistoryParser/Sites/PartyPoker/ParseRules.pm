@@ -50,11 +50,11 @@ sub get_rules{
                                 'bb_size'                => 'posts\sbig\sblind\s\((\d+\.\d+|\d+)\)',                                
                                 'hero_hand'             => 'Dealt to (\w+) \[\s+(\d|T|J|Q|K|A)(c|d|h|s)\s+(\d|T|J|Q|K|A)(c|d|h|s)\s+(\d|T|J|Q|K|A)(c|d|h|s)\s+(\d|T|J|Q|K|A)(c|d|h|s)\s+\]',
                                 'check_winner'            => '(\w+)\s+wins',
-                                'get_winner'            => '(\w+)\s+wins\s+\$(.+)\s+from\s+the\s+(\w+)',
+                                'get_winner'            => '(\w+)\s+wins\s+\$(.+)\s+(from\s+t*h*e*)\s+(side|main)',
                                 'get_winner_alt'        => '(\w+)\s+wins\s+\$(.+)',                                
                                 'get_posts'                => '^(.*)\s+posts\s+(\w+ blind)\s+\[\$(.*)\]',
                                 'get_stacks'            => 'Seat\s(\d+):\s(\w+)\s\(\s\$(.+)\s\)',
-                                'get_shown_cards'        => '(\w+)\s+shows\s+\[\s+(\d|T|J|Q|K|A)(c|d|h|s),\s+(\d|T|J|Q|K|A)(c|d|h|s)\s+(\d|T|J|Q|K|A)(c|d|h|s)\s+(\d|T|J|Q|K|A)(c|d|h|s)\s+\]\s+(.+)\.',
+                                'get_shown_cards'        => '(\w+)\s+(shows|doesn\'t show)\s+\[\s+(\d|T|J|Q|K|A)(c|d|h|s),\s+(\d|T|J|Q|K|A)(c|d|h|s),\s+(\d|T|J|Q|K|A)(c|d|h|s),\s+(\d|T|J|Q|K|A)(c|d|h|s)\s+\]\s+(.+)\.',
                                    'action'                => '\*\*\sDealing\sdown\scards\s\*\*(.*)\*\*\sDealing Flop\s\*\*\s+\[(.+?)\](.*)\*\*\sDealing\sTurn\s\*\*\s+\[(.+?)\](.*)\*\*\sDealing\sRiver\s\*\*\s+\[(.+?)\](.*)',
                                },                               
                   );

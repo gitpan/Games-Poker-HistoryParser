@@ -28,6 +28,7 @@ t/pod.t
 t/Sites.t
 t/Common.t
 t/Sites_Party.t
+t/Sites_Party_PLO.t
 t/Sites_Stars.t
 t/Sites_Stars_O8.t
 eg/convert.pl

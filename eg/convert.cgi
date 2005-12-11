@@ -1,10 +1,11 @@
-#!c:/perl/bin/perl.exe
+#!/usr/bin/perl
 
 use warnings;
 use strict;
+use lib( '/home/clemcat/perl_lib' );
 use Data::Dumper;
-use Output::Output;
-use Sites::Sites;
+use Games::Poker::HistoryParser::Output::Output;
+use Games::Poker::HistoryParser::Sites::Sites;
 use CGI;
 use Elements::Form;
 
@@ -27,12 +28,18 @@ my $invalid;
 
 		my $output  = show( $game, $cgih->param( 'output' ), $cgih->param( 'results' ), $cgih->param( 'showstacks' ) );
 		if( $output ){
+			
 			print "<hr>";
 			print "Copy and paste the text below<br>";
 			print "<hr>";
-			print "<textarea rows=\"30\" cols=\"70\">";
-			print $output;
-			print "</textarea>";
+			    			
+			if( $cgih->param('output') eq 'diagrammer' ){
+				print $output;
+			}else{
+			    print "<textarea rows=\"30\" cols=\"70\">";
+			    print $output;
+			    print "</textarea>";
+			}
 		}else{
 			print "error<br>";
 		}

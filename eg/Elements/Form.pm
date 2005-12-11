@@ -18,8 +18,13 @@ our @EXPORT;
 
 sub start_form{
     my ( $cgih ) = @_;
-    print $cgih->header();
-    print $cgih->start_html( -title=>"Yet Another Poker Hand Converter" );    
+    
+    if( $cgih->param('output') eq 'diagrammer' ){
+        print $cgih->header('image/png');
+	}else{
+        print $cgih->header();
+        print $cgih->start_html( -title=>"Reference implementation for Games::Poker::HistoryParser" );    
+    }
 }
 
 sub main_form{
@@ -43,6 +48,7 @@ print<<FORM;
                 <input type="radio" name="output" value="text">Plain Text</a><br>
                 <input type="radio" name="output" value="xml">XML</a><br>
                 <input type="radio" name="output" value="html">HTML</a><br>
+                <input type="radio" name="output" value="diagrammer">Diagrammer</a><br>                
                 <input type="radio" name="output" value="dump">Data Structure Dump</a><br>
                 
                 <br>
@@ -63,12 +69,12 @@ print<<FORM;
                 <br>
                 <br>
                 <div align="right">
-                <a href="http://www.pokergeek.com/software/yacoph_overview.html" target="window">Project Overview</a><br>
+                <a href="http://www.pokergeek.com/software/README" target="window">Project Overview</a><br>
                 <a href="http://www.pokergeek.com/software" target="window">Get source code</a><br>
                 <a href="http://www.pokergeek.com/software/status_grid.htm" target="window">Supported Hand Histories</a><br>
                 </div>
                 <br>
-                <a href="mailto:yacoph\@pokergeek.com">Please Report Problems Here</a><br>
+                <a href="mailto:perl\@pokergeek.com">Please Report Problems Here</a><br>
                 If you report a problem,<br>please include the hand history<br>
             </td>
         </tr>
