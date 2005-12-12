@@ -47,3 +47,7 @@ Revision history for HistoryParser
 1.4 12/11/2005
      Refactored site specific FlopGames functions into a common module
      Added Absolute hold'em support
+     
+1.5 12/11/2005
+     Stupid me forgot to add a number of new modules to the MANIFEST.
+     Added beginnings of Full Tilt support.

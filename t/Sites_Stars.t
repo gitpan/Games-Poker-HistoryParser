@@ -28,19 +28,19 @@ $data =~ m/START_RAW(.+?)END_RAW.*
 
 my $raw          = $1;
 my $control_2p2  = $2; $control_2p2  = strip( $control_2p2 );
-#my $control_dump = $3; $control_dump = strip( $control_dump );
-#my $control_text = $4; $control_text = strip( $control_text );
-#my $control_xml  = $5; $control_xml  = strip( $control_xml );
-#my $control_html = $6; $control_html = strip( $control_html );
+my $control_dump = $3; $control_dump = strip( $control_dump );
+my $control_text = $4; $control_text = strip( $control_text );
+my $control_xml  = $5; $control_xml  = strip( $control_xml );
+my $control_html = $6; $control_html = strip( $control_html );
 
-#print show( process_hand( $raw, 0 ), '2P2',  'show', 1 );
+#print ok( show( process_hand( $raw, 0 ), 'html', 'show', 1 ) );
 #print "\n---\n";
-#print $control_2p2;
+#print $control_html;
 #print "\n";
 
-#ok( show( process_hand( $raw, ) )                      eq $control_dump, 'Output format - Dump' );
+ok( show( process_hand( $raw, ) )                      eq $control_dump, 'Output format - Dump' );
 ok( show( process_hand( $raw, 0 ), '2P2',  'show', 1 ) eq $control_2p2,  'Output format - 2P2' );
-#ok( show( process_hand( $raw, 0 ), 'text', 'show', 1 ) eq $control_text, 'Output format - Text' );
+ok( show( process_hand( $raw, 0 ), 'text', 'show', 1 ) eq $control_text, 'Output format - Text' );
 #ok( show( process_hand( $raw, 0 ), 'xml',  'show', 1 ) eq $control_xml,  'Output format - XML' );
 #ok( show( process_hand( $raw, 0 ), 'html', 'show', 1 ) eq $control_html, 'Output format - HTML' );
 
@@ -147,10 +147,198 @@ Button has Qc Qd (a pair of Queens)
 Outcome: Button wins $7
 END_2P2
 START_DUMP
+$VAR1 = {
+          'bet_big' => '1.00',
+          'players' => {
+                         'Player_3' => {
+                                         'position_name' => 'UTG+1',
+                                         'stack' => '15',
+                                         'seat' => '3'
+                                       },
+                         'Player_6' => {
+                                         'position_name' => 'MP2',
+                                         'stack' => '22.25',
+                                         'seat' => '6'
+                                       },
+                         'Player_5' => {
+                                         'position_name' => 'MP1',
+                                         'stack' => '42.75',
+                                         'seat' => '5'
+                                       },
+                         'Player_1' => {
+                                         'post_amount' => '0.50',
+                                         'position_name' => 'Big blind',
+                                         'posted' => 'big blind',
+                                         'stack' => '18.75',
+                                         'is_hero' => 1,
+                                         'hand' => '7s As',
+                                         'seat' => '1'
+                                       },
+                         'Player_4' => {
+                                         'position_name' => 'EP',
+                                         'stack' => '27.75',
+                                         'seat' => '4'
+                                       },
+                         'Player_10' => {
+                                          'post_amount' => '0.25',
+                                          'position_name' => 'Small blind',
+                                          'posted' => 'small blind',
+                                          'stack' => '3.75',
+                                          'seat' => '10'
+                                        },
+                         'Player_2' => {
+                                         'position_name' => 'UTG',
+                                         'stack' => '60.25',
+                                         'seat' => '2'
+                                       },
+                         'Player_7' => {
+                                         'position_name' => 'LP',
+                                         'stack' => '21.25',
+                                         'seat' => '7'
+                                       },
+                         'Player_8' => {
+                                         'position_name' => 'CO',
+                                         'stack' => '24.75',
+                                         'seat' => '8'
+                                       },
+                         'Player_9' => {
+                                         'position_name' => 'Button',
+                                         'final_hand' => 'a pair of Queens',
+                                         'stack' => '11.75',
+                                         'cards' => 'Qc Qd',
+                                         'seat' => '9',
+                                         'pots' => [
+                                                     {
+                                                       'amount' => '7',
+                                                       'pot' => 'main'
+                                                     }
+                                                   ]
+                                       }
+                       },
+          'game_display' => 'Hold\'em',
+          'hand_id' => '0000000000',
+          'bb_size' => '0.50',
+          'potsize' => {
+                         'river' => '5.25 BB',
+                         'turn' => '3.25 BB',
+                         'showdown' => '7.25 BB',
+                         'flop' => '4.50 SB'
+                       },
+          'stakes' => '$0.50/$1.00',
+          'stakes_desc' => 'Stakes',
+          'symbol' => '$',
+          'active_players' => 10,
+          'rake' => '0.25',
+          'board' => {
+                       'river' => '9s',
+                       'turn' => '8h',
+                       'flop' => '5s,7h,3h'
+                     },
+          'bet_small' => '0.50',
+          'site' => 'PokerStars',
+          'structure' => 'Limit',
+          'game' => 'HE',
+          'action' => {
+                        'river' => 'Player_1 checks/Player_9 bets $1/Player_1 calls $1',
+                        'turn' => 'Player_1 checks/Player_9 bets $1/Player_1 calls $1',
+                        'flop' => 'Player_1 checks/Player_9 bets $0.50/Player_1 calls $0.50',
+                        'preflop' => 'Player_2 folds/Player_3 folds/Player_4 folds/Player_5 folds/Player_6 folds/Player_7 folds/Player_8 folds/Player_9 raises $1/Player_10 folds/Player_1 calls $0.50'
+                      },
+          'type' => 'Ring',
+          'button' => 9,
+          'hilo_flag' => 0
+        };
 END_DUMP
 START_TEXT
+PokerStars $0.50/$1.00 Limit Hold'em Ring  (10 handed)
+
+Starting Stacks
+Seat 1: Big blind (Hero) ($18.75)
+Seat 2: UTG ($60.25)
+Seat 3: UTG+1 ($15)
+Seat 4: EP ($27.75)
+Seat 5: MP1 ($42.75)
+Seat 6: MP2 ($22.25)
+Seat 7: LP ($21.25)
+Seat 8: CO ($24.75)
+Seat 9: Button ($11.75)
+Seat 10: Small blind ($3.75)
+
+Preflop: Hero is Big blind with 7s, As.
+7 folds, Button raises, Small blind folds, Hero calls
+
+Flop: (4.50 SB) 5s (2 players)
+Hero checks, Button bets, Hero calls
+
+Turn: (3.25 BB) 8h (2 players)
+Hero checks, Button bets, Hero calls
+
+River: (5.25 BB) 9s (2 players)
+Hero checks, Button bets, Hero calls
+
+Final Pot: $7 ($0.25 rake)
+
+Results below:
+Button has Qc Qd (a pair of Queens)
+Outcome: Button wins $7
 END_TEXT
 START_XML
+<?xml version='1.0' standalone='yes'?>
+<HandHistory active_players="10" bb_size="0.50" bet_big="1.00" bet_small="0.50" button="9" game="HE" game_display="Hold'em" hand_id="00
+00000000" hilo_flag="0" rake="0.25" site="PokerStars" stakes="$0.50/$1.00" stakes_desc="Stakes" structure="Limit" symbol="$" type="Ring
+">
+  <action flop="Player_1 checks/Player_9 bets $0.50/Player_1 calls $0.50" preflop="Player_2 folds/Player_3 folds/Player_4 folds/Player_
+5 folds/Player_6 folds/Player_7 folds/Player_8 folds/Player_9 raises $1/Player_10 folds/Player_1 calls $0.50" river="Player_1 checks/Pl
+ayer_9 bets $1/Player_1 calls $1" turn="Player_1 checks/Player_9 bets $1/Player_1 calls $1" />
+  <board flop="5s,7h,3h" river="9s" turn="8h" />
+  <players ="Player_1" hand="7s As" is_hero="1" position_name="Big blind" post_amount="0.50" posted="big blind" seat="1" stack="18.75"
+/>
+  <players ="Player_10" position_name="Small blind" post_amount="0.25" posted="small blind" seat="10" stack="3.75" />
+  <players ="Player_2" position_name="UTG" seat="2" stack="60.25" />
+  <players ="Player_3" position_name="UTG+1" seat="3" stack="15" />
+  <players ="Player_4" position_name="EP" seat="4" stack="27.75" />
+  <players ="Player_5" position_name="MP1" seat="5" stack="42.75" />
+  <players ="Player_6" position_name="MP2" seat="6" stack="22.25" />
+  <players ="Player_7" position_name="LP" seat="7" stack="21.25" />
+  <players ="Player_8" position_name="CO" seat="8" stack="24.75" />
+  <players ="Player_9" cards="Qc Qd" final_hand="a pair of Queens" position_name="Button" seat="9" stack="11.75">
+    <pots amount="7" pot="main" />
+  </players>
+  <potsize flop="4.50 SB" river="5.25 BB" showdown="7.25 BB" turn="3.25 BB" />
+</HandHistory>
 END_XML
 START_HTML
+PokerStars $0.50/$1.00 Hold'em (10 handed)&#60;br&#62;
+&#60;br&#62;
+Starting Stacks&#60;br&#62;
+Seat 1: Big blind (Hero) ($18.75)&#60;br&#62;
+Seat 2: UTG ($60.25)&#60;br&#62;
+Seat 3: UTG+1 ($15)&#60;br&#62;
+Seat 4: EP ($27.75)&#60;br&#62;
+Seat 5: MP1 ($42.75)&#60;br&#62;
+Seat 6: MP2 ($22.25)&#60;br&#62;
+Seat 7: LP ($21.25)&#60;br&#62;
+Seat 8: CO ($24.75)&#60;br&#62;
+Seat 9: Button ($11.75)&#60;br&#62;
+Seat 10: Small blind ($3.75)&#60;br&#62;
+&#60;br&#62;
+&#60;strong&#62;Preflop:&#60;/strong&#62; Hero is Big blind with 7s, As.&#60;br&#62;
+&#60;font color="#666666"&#62;&#60;em&#62;7 folds&#60;/em&#62;&#60;/font&#62;, Button raises, Small blind folds, Big blind calls&#60;br
+&#62;
+&#60;br&#62;
+&#60;strong&#62;Flop:&#60;/strong&#62; (4.50 SB) 5s &#60;font color="#0000FF"&#62;(2 players)&#60;/font&#62;&#60;br&#62;
+Big blind checks, Button bets, Big blind calls&#60;br&#62;
+&#60;br&#62;
+&#60;strong&#62;Turn:&#60;/strong&#62; (3.25 BB) 8h &#60;font color="#0000FF"&#62;(2 players)&#60;/font&#62;&#60;br&#62;
+Big blind checks, Button bets, Big blind calls&#60;br&#62;
+&#60;br&#62;
+&#60;strong&#62;River:&#60;/strong&#62; (5.25 BB) 9s &#60;font color="#0000FF"&#62;(2 players)&#60;/font&#62;&#60;br&#62;
+Big blind checks, Button bets, Big blind calls&#60;br&#62;
+&#60;br&#62;
+&#60;strong&#62;Final Pot:&#60;/strong&#62; 7.25 BB&#60;br&#62;
+&#60;br&#62;
+Results in white below:&#60;br&#62;
+&#60;font color="#FFFFFF"&#62;Button has Qc Qd (a pair of Queens)&#60;br&#62;
+Outcome: Button wins $7&#60;br&#62;
+&#60;/font&#62;&#60;br&#62;
 END_HTML

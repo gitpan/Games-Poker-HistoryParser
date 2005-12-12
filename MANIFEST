@@ -12,6 +12,13 @@ lib/Games/Poker/HistoryParser/Output/Text.pm
 lib/Games/Poker/HistoryParser/Output/Validate.pm
 lib/Games/Poker/HistoryParser/Output/XML.pm
 lib/Games/Poker/HistoryParser/Sites/Common.pm
+lib/Games/Poker/HistoryParser/Sites/Common/FlopGames.pm
+lib/Games/Poker/HistoryParser/Sites/Absolute/FlopGames.pm
+lib/Games/Poker/HistoryParser/Sites/Absolute/ParseRules.pm
+lib/Games/Poker/HistoryParser/Sites/Absolute/Process.pm
+lib/Games/Poker/HistoryParser/Sites/FullTilt/FlopGames.pm
+lib/Games/Poker/HistoryParser/Sites/FullTilt/ParseRules.pm
+lib/Games/Poker/HistoryParser/Sites/FullTilt/Process.pm
 lib/Games/Poker/HistoryParser/Sites/PartyPoker/FlopGames.pm
 lib/Games/Poker/HistoryParser/Sites/PartyPoker/ParseRules.pm
 lib/Games/Poker/HistoryParser/Sites/PartyPoker/Process.pm
