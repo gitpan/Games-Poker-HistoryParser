@@ -38,6 +38,10 @@ t/Sites_Party.t
 t/Sites_Party_PLO.t
 t/Sites_Stars.t
 t/Sites_Stars_O8.t
+t/Absolute/ParseRules.t
+t/FullTilt/ParseRules.t
+t/PartyPoker/ParseRules.t
+t/PokerStars/ParseRules.t
 eg/convert.pl
 eg/convert.cgi
 eg/Elements/Form.pm

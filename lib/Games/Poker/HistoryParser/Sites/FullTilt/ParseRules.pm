@@ -25,10 +25,10 @@ sub get_rules{
                                 'button'                => 'Seat #(\d+) is the button.*?\n',
                                 'hand_id'               => 'PokerStars Game #(\d+):',
                                 'hero_hand'             => 'Dealt\sto\s(.*)\s\[(.*)\]',
-                                'get_winner'            => '^(.*)\s	\wins\sthe\spot\s\(\$(.*)\)',
+                                'get_winner'            => '^(.*)\swins\sthe\spot\s\(\$(.*)\)',
                                 'get_posts'             => '^(.*)\sposts\sthe\s(\w+ blind)\sof\s\$(.*)',
                                 'get_stacks'            => '^Seat\s(\d+):\s(.*)\s\(\$(.*)\)',
-                                'get_shown_cards'       => '^(.*):\s(shows|doesn*t show)\s+\[(.*)]\s\((.+)\)',
+                                'get_shown_cards'       => '^(.*)\s(shows|doesn*t show)\s+\[(.*)]\s\((.+)\)',
                                 'get_rake'              => '^Total\spot.*\|\sRake\s\$+(.*)$',
                                 'action'                => {
                                                                'preflop'  => '\*{3}\shole\scards\s\*{3}(.*?)\*{3}',

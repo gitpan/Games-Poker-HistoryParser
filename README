@@ -1,4 +1,4 @@
-Games::Poker::HistoryParser Version 1.3
+Games::Poker::HistoryParser Version 1.51
 
 Parsing online poker hand histories has interested me for a long time.  My initial 
 attempts, begun about three years ago, generally ended when I would get sidetracked 

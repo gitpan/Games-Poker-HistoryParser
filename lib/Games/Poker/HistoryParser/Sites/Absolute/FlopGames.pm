@@ -293,7 +293,13 @@ sub _get_rake{
     foreach( @lines ){
         next unless m/$regex->{'get_rake'}/i;
         $metadata->{'rake'} = $1;
-        $metadata->{'rake'} =~ s/\s//g;
+        
+        # If there's a side pot, we'll format the rake breakdown a bit
+		if( $metadata->{'rake'} =~ m/:/ ){
+			my ( $total, $pots ) = split /:/, $metadata->{'rake'};
+			$pots =~ s/,/\//g;
+			$metadata->{'rake'} = "$total - $pots";
+		}
     }
 
     return $metadata;   

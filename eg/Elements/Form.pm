@@ -48,7 +48,6 @@ print<<FORM;
                 <input type="radio" name="output" value="text">Plain Text</a><br>
                 <input type="radio" name="output" value="xml">XML</a><br>
                 <input type="radio" name="output" value="html">HTML</a><br>
-                <input type="radio" name="output" value="diagrammer">Diagrammer</a><br>                
                 <input type="radio" name="output" value="dump">Data Structure Dump</a><br>
                 
                 <br>

@@ -51,3 +51,7 @@ Revision history for HistoryParser
 1.5 12/11/2005
      Stupid me forgot to add a number of new modules to the MANIFEST.
      Added beginnings of Full Tilt support.
+     
+1.51 12/19/2005
+     Made a few format fixes for side pot rake presentation and some other
+     minor output fixes.     

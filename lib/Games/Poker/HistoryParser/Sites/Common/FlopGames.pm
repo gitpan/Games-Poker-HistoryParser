@@ -46,7 +46,7 @@ sub get_bets{
         next unless exists $metadata->{'action'}{ lc $street };
         
         my @actions = split /\//, $metadata->{'action'}{ lc $street };
-    
+
         foreach( @actions ){
             next unless m/(bets|calls|raises)/;
             m/(bets|calls|raises)\s+\$*(.*)/i;
@@ -94,7 +94,7 @@ sub get_bets{
 
 sub name_positions{
     my ( $metadata ) = @_;
-    
+
     # We need a nice ordered list of all the players by seat number
     my @all_players;
     $metadata->{'active_players'} = 0;

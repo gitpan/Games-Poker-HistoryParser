@@ -151,10 +151,11 @@ sub _get_stacks{
 
     my @seats;
     foreach my $player ( keys %{ $players } ){
-        
+
+
         my $seat = $players->{$player}{'seat'};
         my $position = $players->{$player}{'position_name'};
-        
+
         if( $players->{$player}{'is_hero'} && $players->{$player}{'is_hero'} == 1 ){
             $position .= ' (Hero)';    
         }            
@@ -185,13 +186,14 @@ sub _get_results{
     }
 
     my $final_pot_amount = 0;
+    $result .= "\n";        
     foreach my $player ( keys %{ $data } ){
         next unless $data->{$player}{'pots'};
-        
+
         foreach( @{ $data->{$player}{'pots'} } ){
             $final_pot_amount += $_->{'amount'};
-            
-            $result .= 'Outcome: ';
+
+            $result .= "Outcome: ";
 
             if( exists $data->{$player}{'is_hero'} ){
                 $result .= 'Hero';

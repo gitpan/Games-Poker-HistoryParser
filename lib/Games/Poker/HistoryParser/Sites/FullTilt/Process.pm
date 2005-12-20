@@ -18,7 +18,7 @@ sub process{
     my ( $history, $showstacks ) = @_;
 
     my $cap = 4; # Betting cap  
-    my $site = 'PokerStars';
+    my $site = 'Full Tilt';
     
     my ( $game, $game_display, $hilo_flag ) = _determine_game( $history );
 

@@ -32,8 +32,8 @@ sub parse_hand{
     $game_meta = _get_winner(      $history, $game_meta, $regex );
     $game_meta = get_posts(        $history, $game_meta, $regex );
     $game_meta = get_bets(         $game_meta, $regex );
-    $game_meta = _get_rake(            $history, $game_meta, $regex );
-print Dumper $game_meta; exit;
+    $game_meta = _get_rake(        $history, $game_meta, $regex );
+
     return $game_meta;  
     
 }
@@ -204,13 +204,13 @@ sub _get_action{
 
     if( $flop ){
         $flop =~ s/\[(\w{2}\s+\w{2}\s+\w{2})\]//;
-          $metadata->{'board'}{'flop'}  = $1;
-           $metadata->{'board'}{'flop'}  =~ s/\s/,/g;
+        $metadata->{'board'}{'flop'}  = $1;
+        $metadata->{'board'}{'flop'}  =~ s/\s/,/g;
         $metadata->{'action'}{'flop'} = $flop;;
        }
        
-       if( $turn ){
-         $turn =~ s/\[(\w{2})\]//;
+    if( $turn ){
+        $turn =~ s/\[(\w{2})\]//;
         $metadata->{'board'}{'turn'}  = $1;
         $metadata->{'action'}{'turn'} = $turn;
     }
@@ -245,19 +245,23 @@ sub _get_action{
                  next;
              }
 
-             my ( $name, $action ) = split /\s+/, $action[$i];
-			 $action =~ s/\s+$//;
-             $action[$i] = join ' ', $name, $action;
-              
              #Change raise notation to standard    
              if( $action[$i] =~ m/raises/ ){
-                $action[$i] =~ s/raises\s.*\sto/raises/;
+                $action[$i] =~ s/raises\sto/raises/;
              }
+
+             my ( $name, $action, $amount ) = split /\s+/, $action[$i];
+			 $action =~ s/\s+$//;
+			 if( $amount ){
+	             $action[$i] = join ' ', $name, $action, $amount;
+			 }else{
+	             $action[$i] = join ' ', $name, $action;
+			 }	             
               
              #Change all-in notation to standard    
              if( $action[$i] =~ m/all-in/i ){
                 my ( $player, $action, $amount ) = split /\s/, $action[$i];
-                 $action[$i] = $player . ' all-in ' . $amount;
+                $action[$i] = $player . ' all-in ' . $amount;
              }
            }
 

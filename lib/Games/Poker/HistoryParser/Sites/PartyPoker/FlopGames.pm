@@ -92,31 +92,42 @@ sub _get_metadata{
         $metadata{ 'bb_size' } = $metadata{ 'bet_small' };  
 
     }elsif ( $history =~ m/$regex->{'nolimit_ring'}/i ){
-        $metadata{ 'stakes' }    = undef;
+        $metadata{ 'stakes' }    = $1;
         $metadata{ 'stakes_desc'} = 'Blinds';        
         $metadata{ 'structure' } = "NL";
         $metadata{ 'type' }      = "Ring";
 
-        if ( $history =~ m/$regex->{'bb_size'}/i ){
-            $metadata{ 'bet_small'} = $1;
+        if ( $history =~ m/$regex->{'sb_size'}/i ) {
+            $metadata{ 'sb_size'} = $1;
+            $metadata{ 'stakes' } = $1;
         }   
 
-        $metadata{ 'bet_big'}  = 1;
-        $metadata{ 'bb_size' } = $metadata{ 'bet_small' };  
+        if ( $history =~ m/$regex->{'bb_size'}/i ) {
+            $metadata{ 'bet_small'} = $1;
+	        $metadata{ 'bb_size' }  = $1;
+	        $metadata{ 'stakes' }  .= $1;
+        }   
 
+        $metadata{ 'bet_big'}  = 1; # placeholder, unused
         
     }elsif ($history =~ m/$regex->{'potlimit_ring'}/i ){
-        $metadata{ 'stakes' }    = undef;
         $metadata{ 'stakes_desc'} = 'Blinds';        
         $metadata{ 'structure' } = "PL";
         $metadata{ 'type' }      = "Ring";
 
         if ( $history =~ m/$regex->{'bb_size'}/i ) {
-            $metadata{ 'bet_small'} = $1;
+	        $metadata{ 'bb_size' }  = $1;
         }   
 
-        $metadata{ 'bet_big'}  = 1;
-        $metadata{ 'bb_size' } = $metadata{ 'bet_small' };  
+
+        if ( $history =~ m/$regex->{'sb_size'}/i ) {
+            $metadata{ 'sb_size'} = $1;
+        }   
+
+        $metadata{ 'stakes' }   = join '/', $metadata{'sb_size'}, $metadata{'bb_size'};
+		
+		$metadata{ 'bet_small' }  = 1; # placeholder, unused
+        $metadata{ 'bet_big' }    = 1; # placeholder, unused
     
     }else{
         return undef;   

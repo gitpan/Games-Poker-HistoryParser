@@ -7,7 +7,7 @@ use Exporter;
 use Data::Dumper;
 
 our @ISA = qw(Exporter);
-our $VERSION = '1.5';
+our $VERSION = '1.51';
 our $error = "";
 our @EXPORT;
 
